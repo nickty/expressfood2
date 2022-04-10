@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../../components/Header'
 import { colors, parameters, titleHead } from '../../global/styles'
 import * as Animatable from 'react-native-animatable'
-import { Button, Icon, SocialIcon } from '@rneui/themed'
+import { Button, ButtonGroup, Icon, SocialIcon } from '@rneui/themed'
 import { AirbnbRating } from '@rneui/base'
 
 const SignInScreen = () => {
@@ -102,6 +102,14 @@ const SignInScreen = () => {
       <View style={{marginTop: 10, marginLeft: 20}}>
           <Text style={{...styles.text1}}>New on GJC ?</Text>
       </View>
+
+      <View style={{alignItems: "flex-end", marginHorizontal: 20}}>
+          <Button 
+            title="Create an account"
+            buttonStyle={styles.createButton}
+            titleStyle={styles.createButtonTitle}
+          />
+      </View>
     </View>
   )
 }
@@ -138,5 +146,23 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         height: 50,
         width: 250
+    },
+    createButton: {
+        backgroundColor: "white",
+        alignContent: 'center',
+        justifyContent: 'center',
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: "#ff8c52", 
+        height: 40, 
+        paddingHorizontal: 20
+    }, 
+    createButtonTitle: {
+        color: "#ff8c52", 
+        fontSize: 16,
+        fontWeight: "bold", 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        marginTop: -3
     }
 })
