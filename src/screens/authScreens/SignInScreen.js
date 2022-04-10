@@ -70,6 +70,7 @@ const SignInScreen = ({navigation}) => {
             title= "SIGN IN"
             buttonStyle={parameters.styledButton}
             titleStyle={parameters.buttonTitle}
+            onPress={() => {navigation.navigate('HomeScreen')}}
           />
       </View>
 
