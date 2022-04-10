@@ -3,7 +3,8 @@ import React, { useRef, useState } from 'react'
 import Header from '../../components/Header'
 import { colors, parameters, titleHead } from '../../global/styles'
 import * as Animatable from 'react-native-animatable'
-import { Button, Icon } from '@rneui/themed'
+import { Button, Icon, SocialIcon } from '@rneui/themed'
+import { AirbnbRating } from '@rneui/base'
 
 const SignInScreen = () => {
 
@@ -79,6 +80,28 @@ const SignInScreen = () => {
       <View style={{alignItems: 'center', marginTop: 10, marginBottom: 10}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>OR</Text>
       </View>
+
+      <View style={{margin: 5, alignItems: 'center'}}>
+          <SocialIcon 
+            title='Sign In With Facebook'
+            button
+            type='facebook'
+            style={styles.socialIcon}
+            onPress={() => {}}
+          />
+      </View>
+      <View style={{margin: 5, alignItems: 'center'}}>
+          <SocialIcon 
+            title='Sign In With Facebook'
+            button
+            type='google'
+            style={styles.socialIcon}
+            onPress={() => {}}
+          />
+      </View>
+      <View style={{marginTop: 10, marginLeft: 20}}>
+          <Text style={{...styles.text1}}>New on GJC ?</Text>
+      </View>
     </View>
   )
 }
@@ -111,4 +134,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingLeft: 16
     }, 
+    socialIcon: {
+        borderRadius: 12,
+        height: 50,
+        width: 250
+    }
 })
