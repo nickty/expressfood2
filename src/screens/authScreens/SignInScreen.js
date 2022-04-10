@@ -3,8 +3,7 @@ import React, { useRef, useState } from 'react'
 import Header from '../../components/Header'
 import { colors, parameters, titleHead } from '../../global/styles'
 import * as Animatable from 'react-native-animatable'
-import { Button, ButtonGroup, Icon, SocialIcon } from '@rneui/themed'
-import { AirbnbRating } from '@rneui/base'
+import { Button, Icon, SocialIcon } from '@rneui/themed'
 
 const SignInScreen = ({navigation}) => {
 
