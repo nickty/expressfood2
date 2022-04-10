@@ -1,9 +1,9 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useRef, useState } from 'react'
 import Header from '../../components/Header'
-import { colors, titleHead } from '../../global/styles'
+import { colors, parameters, titleHead } from '../../global/styles'
 import * as Animatable from 'react-native-animatable'
-import { Icon } from '@rneui/themed'
+import { Button, Icon } from '@rneui/themed'
 
 const SignInScreen = () => {
 
@@ -63,6 +63,14 @@ const SignInScreen = () => {
             </Animatable.View>
           </View>
           
+      </View>
+
+      <View style={{margin: 20}}>
+          <Button 
+            title= "SIGN IN"
+            buttonStyle={parameters.styledButton}
+            titleStyle={parameters.buttonTitle}
+          />
       </View>
     </View>
   )

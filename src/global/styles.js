@@ -14,7 +14,7 @@ export const colors = {
 export const parameters = {
     headerHight : 40,
 
-    styleedButton: {
+    styledButton: {
         backgroundColor: "#ff8c52",
         alignContent:"center",
         justifyContent: 'center',
