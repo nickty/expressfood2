@@ -2,6 +2,8 @@ import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import Header from '../../components/Header'
 import { colors, titleHead } from '../../global/styles'
+import * as Animatable from 'react-native-animatable'
+import { Icon } from '@rneui/themed'
 
 const SignInScreen = () => {
   return (
@@ -26,12 +28,27 @@ const SignInScreen = () => {
                 placeholder="Email"
               />
           </View>
-          <View>
-              <TextInput 
-                style={styles.TextInput2}
-                placeholder="Password"
-              />
+          <View style={styles.TextInput2}>
+            <Animatable.View>
+                <Icon 
+                    name='lock'
+                    iconStyle={{color: colors.grey3}}
+                    type="material"
+                />
+            </Animatable.View>
+            <TextInput 
+                style={{width: "80%"}}
+            />
+            <Animatable.View>
+            <Icon 
+                    name='visibility-off'
+                    iconStyle={{color: colors.grey3}}
+                    type="material"
+                    style={{marginRight: 10}}
+                />
+            </Animatable.View>
           </View>
+          
       </View>
     </View>
   )
