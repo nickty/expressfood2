@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import React from 'react'
 import { colors } from './src/global/styles'
-import SignInScreen from './src/screens/authScreens/SignInScreen'
+import SignInWelcomScreen from './src/screens/authScreens/SignInWelcomScreen'
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
         barStyle='light-content'
         backgroundColor={colors.statusbar}
       />
-      <SignInScreen />
+      <SignInWelcomScreen />
     </View>
   )
 }
