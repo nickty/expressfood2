@@ -37,5 +37,6 @@ export const parameters = {
 export const titleHead = {
     color: "#ff8c52",
     fontSize: 20,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    marginLeft: 20
 }

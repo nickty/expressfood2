@@ -3,12 +3,12 @@ import React from 'react'
 import { colors, parameters } from '../global/styles'
 import { Icon } from '@rneui/themed';
 
-const Header = ({title}) => {
+const Header = ({title, type}) => {
   return (
     <View style={styles.header}>
       <View style={{marginLeft:10}}>
           <Icon 
-            name='arrow-left'
+            name={type}
             color={colors.headerText}
             size={28}
             onPress={() => {}}
