@@ -6,7 +6,7 @@ import * as Animatable from 'react-native-animatable'
 import { Button, ButtonGroup, Icon, SocialIcon } from '@rneui/themed'
 import { AirbnbRating } from '@rneui/base'
 
-const SignInScreen = () => {
+const SignInScreen = ({navigation}) => {
 
     const [textInput2Foccused, setTextInput2Foccused] = useState(false)
 
@@ -15,7 +15,7 @@ const SignInScreen = () => {
   return (
     <View style={styles.container}>
       
-      <Header title="My Account" type="arrow-left" />
+      <Header title="My Account" type="arrow-left" navigation={navigation} />
       <View>
           <Text style={titleHead}>Sign-In</Text>
       </View>
