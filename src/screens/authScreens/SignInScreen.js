@@ -72,6 +72,13 @@ const SignInScreen = () => {
             titleStyle={parameters.buttonTitle}
           />
       </View>
+
+      <View style={{alignItems: 'center', marginTop: 10}}>
+          <Text style={{...styles.text1, textDecorationLine: 'underline'}}>Forgot  Password ?</Text>
+      </View>
+      <View style={{alignItems: 'center', marginTop: 10, marginBottom: 10}}>
+          <Text style={{fontSize: 20, fontWeight: 'bold'}}>OR</Text>
+      </View>
     </View>
   )
 }
