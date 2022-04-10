@@ -1,11 +1,16 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Header from '../../components/Header'
 import { colors, titleHead } from '../../global/styles'
 import * as Animatable from 'react-native-animatable'
 import { Icon } from '@rneui/themed'
 
 const SignInScreen = () => {
+
+    const [textInput2Foccused, setTextInput2Foccused] = useState(false)
+
+    const textInput1 = useRef(1)
+    const textInput2 = useRef(2)
   return (
     <View style={styles.container}>
       
@@ -26,10 +31,11 @@ const SignInScreen = () => {
               <TextInput 
                 style={styles.TextInput1}
                 placeholder="Email"
+                ref={textInput1}
               />
           </View>
           <View style={styles.TextInput2}>
-            <Animatable.View>
+            <Animatable.View animation={textInput2Foccused ? "" : "fadeInRight"} duration={400}>
                 <Icon 
                     name='lock'
                     iconStyle={{color: colors.grey3}}
@@ -38,8 +44,16 @@ const SignInScreen = () => {
             </Animatable.View>
             <TextInput 
                 style={{width: "80%"}}
+                placeholder="Password"
+                ref={textInput2}
+                onFocus={() => {
+                    setTextInput2Foccused(false)
+                }}
+                onBlur= {() => {
+                    setTextInput2Foccused(true)
+                }}
             />
-            <Animatable.View>
+            <Animatable.View animation={textInput2Foccused ? "" : "fadeInLeft"} duration={400}>
             <Icon 
                     name='visibility-off'
                     iconStyle={{color: colors.grey3}}
