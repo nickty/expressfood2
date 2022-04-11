@@ -1,10 +1,12 @@
-import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import {Dimensions, TouchableOpacity, FlatList, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { colors } from '../global/styles'
 import { Icon } from '@rneui/themed'
-import { filterData } from '../global/Data'
+import { filterData, restaurantsData } from '../global/Data'
+import FoodCard from '../components/FoodCard'
+
+const SCREEN_WIDTH = Dimensions.get('window').width
 
 const HomeScreen = () => {
 
@@ -111,6 +113,32 @@ const HomeScreen = () => {
           </View>
           
         </ScrollView>
+
+        <View style={styles.headerTextView}>
+            <Text style={styles.headerText}>Free Delivery</Text>
+          </View>
+       <View>
+         <FlatList 
+          style={{marginTop: 10, marginBottom: 10}}
+          horizontal
+          showsHorizontalScrollIndicator = {false}
+          data = {restaurantsData}
+          keyExtractor = {(item, index) => index.toString()}
+          renderItem = {({item}) => (
+            <View style={{marginRight: 5}}>
+              <FoodCard 
+                screenWidth={ SCREEN_WIDTH*0.8}
+                images = {item.images}
+                restaurantName={item.restaurantsName}
+                farAway= {item.farAway}
+                businessAddress = {item.businessAddress}
+                averageReview = {item.averageReview}
+                numberOfReview = {item.numberOfReviews}
+              />
+            </View>  
+          )}
+         />
+       </View>
         
     </View>
   )
