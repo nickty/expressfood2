@@ -11,7 +11,7 @@ const FoodCard = ({
     discountPercent,
     numberOfReview,
     businessAddress,
-    farAway="2km",
+    farAway,
     averageReview,
     images,
     screenWidth

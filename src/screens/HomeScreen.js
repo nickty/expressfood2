@@ -103,7 +103,7 @@ const HomeScreen = () => {
 
                       />
                       <View>
-                        <Text style = {indexCheck === item.id ? {...styles.smallCardSelected} : {...styles.smallCardText}}>
+                        <Text style = {indexCheck === item.id ? {...styles.smallCardTextSelected} : {...styles.smallCardText}}>
                           {item.name}
                         </Text>
                       </View>
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
       alignItems: 'center', 
       padding: 5, 
       width: 80, 
-      margin: 10, 
+      margin: 10,
       height: 100
     }, 
     smallCardTextSelected: {
