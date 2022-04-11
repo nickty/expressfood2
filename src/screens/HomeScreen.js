@@ -5,6 +5,7 @@ import { colors } from '../global/styles'
 import { Icon } from '@rneui/themed'
 import { filterData, restaurantsData } from '../global/Data'
 import FoodCard from '../components/FoodCard'
+import CountDown from 'react-native-countdown-component'
 
 const SCREEN_WIDTH = Dimensions.get('window').width
 
@@ -116,6 +117,17 @@ const HomeScreen = () => {
             <Text style={styles.headerText}>Free Delivery</Text>
           </View>
        <View>
+         <View style={{flexDirection: 'row', alignItems: 'center'}}> 
+                <Text style={{marginLeft:15, fontSize: 16, marginTop: -10, marginRight: 5}}>Options changing in</Text>
+                <CountDown 
+                  until={3600}
+                  size = {14}
+                  digitStyle = {{backgroundColor: colors.lightGreen}}
+                  digitTxtStyle = {{color: colors.CardBackground}}
+                  timeToShow= {['M', "S"]}
+                  timeLabels = {{m: 'Min', s: 'Sec'}}
+                />
+         </View>
          <FlatList 
           style={{marginTop: 10, marginBottom: 10}}
           horizontal
