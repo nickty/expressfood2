@@ -1,13 +1,15 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import HomeHeader from '../components/HomeHeader'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { colors } from '../global/styles'
 import { Icon } from '@rneui/themed'
+import { filterData } from '../global/Data'
 
 const HomeScreen = () => {
 
   const [delivery, setDelivery] = useState(true)
+  const [indexCheck, setIndexCheck] = useState(0)
 
   return (
     <View style={styles.container}>
@@ -77,6 +79,36 @@ const HomeScreen = () => {
           <View style={styles.headerTextView}>
             <Text style={styles.headerText}>Categories</Text>
           </View>
+
+          <View>
+            <FlatList
+              horizontal={true}
+              showsHorizontalScrollIndicator={false} 
+              data={filterData}
+              keyExtractor={(item)=>item.id}
+              extraData={indexCheck}
+              renderItem={({item, index}) => (
+                <Pressable 
+                  onPress={() => {
+                    setIndexCheck(item.id)
+                  }}
+                >
+                  <View style= {indexCheck === item.id ? {...styles.smallCardSelected} : {...styles.smallCard}}>
+                      <Image 
+                        style={{height: 60, width: 60, borderRadius: 30}}
+                        source = {item.image}
+
+                      />
+                      <View>
+                        <Text style = {indexCheck === item.id ? {...styles.smallCardSelected} : {...styles.smallCardText}}>
+                          {item.name}
+                        </Text>
+                      </View>
+                  </View>
+                </Pressable>
+              )}
+            />
+          </View>
           
         </ScrollView>
         
@@ -133,5 +165,33 @@ const styles = StyleSheet.create({
     headerTextView: {
       backgroundColor: colors.grey5,
       paddingVertical: 3
+    }, 
+    smallCard: {
+      borderRadius: 30,
+      backgroundColor: colors.grey5,
+      justifyContent: 'center',
+      alignItems: 'center', 
+      padding: 5, 
+      width: 80, 
+      margin: 10, 
+      height: 100
+    }, 
+    smallCardSelected: {
+      borderRadius: 30,
+      backgroundColor: colors.buttons,
+      justifyContent: 'center',
+      alignItems: 'center', 
+      padding: 5, 
+      width: 80, 
+      margin: 10, 
+      height: 100
+    }, 
+    smallCardTextSelected: {
+      fontWeight: 'bold',
+      color: colors.CardBackground
+    },
+    smallCardText: {
+      fontWeight: 'bold',
+      color: colors.grey2
     }
 })
