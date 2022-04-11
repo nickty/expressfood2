@@ -73,6 +73,10 @@ const HomeScreen = () => {
                   />
             </View>
           </View>
+
+          <View style={styles.headerTextView}>
+            <Text style={styles.headerText}>Categories</Text>
+          </View>
           
         </ScrollView>
         
@@ -119,5 +123,15 @@ const styles = StyleSheet.create({
       paddingHorizontal: 5,
       justifyContent: "space-evenly",
       paddingHorizontal: 20
+    }, 
+    headerText: {
+      color: colors.grey2,
+      fontSize: 24,
+      fontWeight: 'bold',
+      paddingLeft: 10
+    }, 
+    headerTextView: {
+      backgroundColor: colors.grey5,
+      paddingVertical: 3
     }
 })
