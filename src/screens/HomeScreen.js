@@ -111,10 +111,8 @@ const HomeScreen = () => {
               )}
             />
           </View>
-          
-        </ScrollView>
 
-        <View style={styles.headerTextView}>
+          <View style={styles.headerTextView}>
             <Text style={styles.headerText}>Free Delivery</Text>
           </View>
        <View>
@@ -139,6 +137,10 @@ const HomeScreen = () => {
           )}
          />
        </View>
+          
+      </ScrollView>
+
+       
         
     </View>
   )
