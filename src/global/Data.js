@@ -35,6 +35,7 @@ export const restaurantsData = [
     {
         restaurantsName: "Badda", 
         farAway: 21.2,
+        id: 4,
         businessAddress: "38 example address, Dhaka", 
         images: 'https://png.pngtree.com/png-clipart/20220320/ourmid/pngtree-ramadan-illustration-of-muslim-men-giving-alms-or-zakat-to-people-png-image_4498418.png',
         averageReview: 4.9,
@@ -67,6 +68,7 @@ export const restaurantsData = [
     {
         restaurantsName: "Dhanmondi", 
         farAway: 21.2,
+        id: 1,
         businessAddress: "38 example address, Dhaka", 
         images: 'https://png.pngtree.com/png-clipart/20220320/ourmid/pngtree-ramadan-illustration-of-muslim-men-giving-alms-or-zakat-to-people-png-image_4498418.png',
         averageReview: 4.9,
@@ -99,6 +101,7 @@ export const restaurantsData = [
     {
         restaurantsName: "Gulshan-1", 
         farAway: 21.2,
+        id: 2,
         businessAddress: "38 example address, Dhaka", 
         images: 'https://png.pngtree.com/png-clipart/20220320/ourmid/pngtree-ramadan-illustration-of-muslim-men-giving-alms-or-zakat-to-people-png-image_4498418.png',
         averageReview: 4.9,
@@ -131,6 +134,7 @@ export const restaurantsData = [
     {
         restaurantsName: "Gulshan-2", 
         farAway: 21.2,
+        id: 3,
         businessAddress: "38 example address, Dhaka", 
         images: 'https://png.pngtree.com/png-clipart/20220320/ourmid/pngtree-ramadan-illustration-of-muslim-men-giving-alms-or-zakat-to-people-png-image_4498418.png',
         averageReview: 4.9,

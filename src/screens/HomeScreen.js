@@ -20,7 +20,7 @@ const HomeScreen = () => {
           stickyHeaderIndices={[0]}
           showsVerticalScrollIndicator= {true}
         >
-          <View>
+          <View style={{backgroundColor: colors.CardBackground, paddingBottom: 5}}>
             <View style={{marginTop: 10, flexDirection: 'row', justifyContent: 'space-evenly'}}>
               <TouchableOpacity
                 onPress={()=> {
@@ -138,7 +138,53 @@ const HomeScreen = () => {
          />
        </View>
 
-       
+       <View style={styles.headerTextView}>
+            <Text style={styles.headerText}>Promotions Available</Text>
+          </View>
+       <View>
+         <FlatList 
+          style={{marginTop: 10, marginBottom: 10}}
+          horizontal
+          showsHorizontalScrollIndicator = {false}
+          data = {restaurantsData}
+          keyExtractor = {(item, index) => index.toString()}
+          renderItem = {({item}) => (
+            <View style={{marginRight: 5}}>
+              <FoodCard 
+                screenWidth={ SCREEN_WIDTH*0.8}
+                images = {item.images}
+                restaurantName={item.restaurantsName}
+                farAway= {item.farAway}
+                businessAddress = {item.businessAddress}
+                averageReview = {item.averageReview}
+                numberOfReview = {item.numberOfReviews}
+              />
+            </View>  
+          )}
+         />
+       </View>
+
+       <View style={styles.headerTextView}>
+            <Text style={styles.headerText}>Restaurants In Your Area</Text>
+          </View>
+
+       <View style={{width: SCREEN_WIDTH, paddingTop: 10}}>
+            {
+              restaurantsData.map(item => (
+                <View key={item.id} style={{paddingBottom: 20 }}>
+                  <FoodCard 
+                    screenWidth={ SCREEN_WIDTH*0.95}
+                    images = {item.images}
+                    restaurantName={item.restaurantsName}
+                    farAway= {item.farAway}
+                    businessAddress = {item.businessAddress}
+                    averageReview = {item.averageReview}
+                    numberOfReview = {item.numberOfReviews}
+                  />
+                </View>
+              ))
+            }
+       </View>
           
       </ScrollView>
 
@@ -158,7 +204,7 @@ const styles = StyleSheet.create({
     deliveryButton: {
       paddingHorizontal: 20, 
       borderRadius: 15,
-      paddingVertical: 15
+      paddingVertical: 5
     }, 
     deliveryText: {
       marginLeft: 5, 
